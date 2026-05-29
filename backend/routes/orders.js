@@ -6,11 +6,17 @@ const db = require("../database");
 
 router.get("/:userId", (req, res) => {
   const { userId } = req.params;
-  const sql = "SELECT * FROM orders WHERE user_id = ?";
 
-  db.all(sql, [], (err, rows) => {
+  const sql = `
+    SELECT * FROM orders
+    WHERE user_id = ?
+  `;
+
+  db.all(sql, [userId], (err, rows) => {
     if (err) {
-      res.status(500).json(err);
+      res.status(500).json({
+        error: err.message,
+      });
     } else {
       res.json(rows);
     }

@@ -35,6 +35,8 @@ class Cart extends Component {
       cartItems,
     };
 
+    console.log(orderData)
+
     const url = `${API_URL}/orders`;
 
     const options = {
