@@ -3,7 +3,6 @@ const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const profileRoutes = require("./routes/userdata");
 
-
 const app = express();
 
 app.use(cors());
@@ -21,7 +20,7 @@ app.use("/menu-items", menuItemRoutes);
 app.use("/profile", profileRoutes);
 app.use("/orders", orderRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
