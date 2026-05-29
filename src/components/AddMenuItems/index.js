@@ -15,6 +15,7 @@ class AddMenuItems extends Component {
   componentDidMount() {
     const { restid } = this.props.params;
     this.setState({ restids: restid });
+    document.title = "Add Menu Items | Skfoods";
   }
 
   onchangeitemname = (event) => {

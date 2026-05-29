@@ -13,6 +13,9 @@ class Signup extends Component {
     Login: false,
     message: "",
   };
+  componentDidMount() {
+    document.title = "Sign Up | Skfoods";
+  }
 
   gotologin = () => {
     this.setState({ login: true });

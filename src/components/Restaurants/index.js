@@ -15,6 +15,7 @@ class Restaurants extends Component {
 
   componentDidMount() {
     this.getRestaurants();
+    document.title = "Home | Skfoods";
   }
 
   getRestaurants = async () => {

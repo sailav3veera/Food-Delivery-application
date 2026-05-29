@@ -7,6 +7,9 @@ import { HiMiniBuildingStorefront } from "react-icons/hi2";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 
 class Profile extends Component {
+  componentDidMount() {
+    document.title = "Settings | Skfoods";
+  }
   render() {
     const user = localStorage.getItem("username");
 

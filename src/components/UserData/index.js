@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 class UserData extends Component {
   state = { usernames: "", userid: "", userrole: "", useremail: "" };
   componentDidMount = async () => {
+    document.title = "User Details | SKfoods";
     try {
       const { useremail } = this.props;
 

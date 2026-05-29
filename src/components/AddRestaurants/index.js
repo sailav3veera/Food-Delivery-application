@@ -13,6 +13,10 @@ class AddRestaurants extends Component {
     message: "",
   };
 
+  componentDidMount() {
+    document.title = "Add Restaurants | Skfoods";
+  }
+
   suceefulladd = (message) => {
     this.setState({ message: message });
   };

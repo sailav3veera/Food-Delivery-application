@@ -13,6 +13,9 @@ class Login extends Component {
     errorMessage: "",
     agreed: false,
   };
+  componentDidMount() {
+    document.title = "Login | Skfoods";
+  }
   checkboxdetails = (event) => {
     this.setState({ agreed: event.target.checked });
   };

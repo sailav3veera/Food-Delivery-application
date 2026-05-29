@@ -5,7 +5,7 @@ const router = express.Router();
 const db = require("../database");
 
 router.get("/", (req, res) => {
-  const sql = "SELECT * FROM orders";
+  const sql = "SELECT * FROM orders WHERE user_id = ?";
 
   db.all(sql, [], (err, rows) => {
     if (err) {

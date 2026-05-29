@@ -12,6 +12,7 @@ class ViewMenu extends Component {
     const { restid } = this.props;
     this.setState({ selectedRestaurantId: restid });
     this.getmenudata(restid);
+    document.title = "Menu | SKfoods";
   }
 
   getmenudata = async (restaurantId) => {

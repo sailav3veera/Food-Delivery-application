@@ -6,15 +6,28 @@ import Navbar from "../Navbar";
 import OrderItems from "../OrderItems";
 
 class Orders extends Component {
-  state = { isloading: true, orders: [] };
-  componentDidMount() {
+  state = { isloading: true, orders: [], user_id: "" };
+
+  getuserdatas = async () => {
+    const useremail = localStorage.getItem("username");
+    const responseuser = await fetch(`${API_URL}/profile/${useremail}`);
+    const datauser = await responseuser.json();
+    const userid = datauser[0].id;
+
+    this.setState({ user_id: userid });
     this.getorderdata();
+  };
+  componentDidMount() {
+    this.getuserdatas();
+
+    document.title = "Orders | SKfoods";
   }
   successfulorders = (data) => {
     this.setState((prevstate) => ({ orders: [...prevstate.orders, ...data] }));
   };
   getorderdata = async () => {
-    const urls = `${API_URL}/orders`;
+    const { user_id } = this.state;
+    const urls = `${API_URL}/orders/${user_id}`;
     const options = { method: "GET" };
     const response = await fetch(urls, options);
     const data = await response.json();
@@ -46,7 +59,7 @@ class Orders extends Component {
               />
             </div>
           ) : (
-            <ul >
+            <ul>
               {orders.map((eachorder) => (
                 <OrderItems key={eachorder.id} eachorder={eachorder} />
               ))}

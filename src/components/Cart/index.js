@@ -17,7 +17,9 @@ class Cart extends Component {
   };
   componentDidMount() {
     this.getuserdatas();
+    document.title = "Cart | Skfoods";
   }
+
   placeOrder = async () => {
     const { cartItems } = this.props;
     const { user_id } = this.state;
