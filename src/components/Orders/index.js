@@ -14,8 +14,7 @@ class Orders extends Component {
     const datauser = await responseuser.json();
     const userid = datauser[0].id;
 
-    this.setState({ user_id: userid });
-    this.getorderdata();
+    this.setState({ user_id: userid }, this.getorderdata);
   };
   componentDidMount() {
     this.getuserdatas();
@@ -27,7 +26,9 @@ class Orders extends Component {
   };
   getorderdata = async () => {
     const { user_id } = this.state;
+
     const urls = `${API_URL}/orders/${user_id}`;
+
     const options = { method: "GET" };
     const response = await fetch(urls, options);
     const data = await response.json();

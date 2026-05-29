@@ -4,7 +4,8 @@ const router = express.Router();
 
 const db = require("../database");
 
-router.get("/", (req, res) => {
+router.get("/:userId", (req, res) => {
+  const { userId } = req.params;
   const sql = "SELECT * FROM orders WHERE user_id = ?";
 
   db.all(sql, [], (err, rows) => {
