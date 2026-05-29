@@ -62,6 +62,7 @@ class Login extends Component {
 
       if (response.ok) {
         this.successfullogin(data);
+        window.location.reload();
       } else {
         this.setState({ errorMessage: data.message });
       }

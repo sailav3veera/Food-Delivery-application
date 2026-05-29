@@ -59,6 +59,8 @@ class Orders extends Component {
                 visible={true}
               />
             </div>
+          ) : orders.length === 0 ? (
+            <h1>No Orders Placed</h1>
           ) : (
             <ul>
               {orders.map((eachorder) => (

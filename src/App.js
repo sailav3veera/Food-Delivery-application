@@ -16,65 +16,66 @@ import Orders from "./components/Orders";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 class App extends Component {
-  state = { cartItems: [] };
-  componentDidMount() {
-    const storedCart = localStorage.getItem("cartItems");
+  getCartItems = () => {
+    const username = localStorage.getItem("username");
 
-    if (storedCart) {
-      this.setState({
-        cartItems: JSON.parse(storedCart),
-      });
-    }
+    const storedCart = localStorage.getItem(`cartItems_${username}`);
+
+    return storedCart ? JSON.parse(storedCart) : [];
+  };
+
+  state = {
+    cartItems: [], // start empty safely
+  };
+
+  componentDidMount() {
+    this.setState({
+      cartItems: this.getCartItems(),
+    });
   }
+
   addToCart = (menuItem) => {
     const { cartItems } = this.state;
 
+    const username = localStorage.getItem("username");
+
     const existingItem = cartItems.find((item) => item.id === menuItem.id);
 
+    let updatedCart;
+
     if (existingItem) {
-      const updatedCart = cartItems.map((item) => {
+      updatedCart = cartItems.map((item) => {
         if (item.id === menuItem.id) {
           return {
             ...item,
             quantity: item.quantity + 1,
           };
         }
-
         return item;
       });
-
-      this.setState(
-        {
-          cartItems: updatedCart,
-        },
-        () => {
-          localStorage.setItem(
-            "cartItems",
-            JSON.stringify(this.state.cartItems),
-          );
-        },
-      );
     } else {
-      const newItem = {
-        ...menuItem,
-        quantity: 1,
-      };
-
-      this.setState(
-        {
-          cartItems: [...cartItems, newItem],
-        },
-        () => {
-          localStorage.setItem(
-            "cartItems",
-            JSON.stringify(this.state.cartItems),
-          );
-        },
-      );
+      updatedCart = [...cartItems, { ...menuItem, quantity: 1 }];
     }
+
+    this.setState({ cartItems: updatedCart }, () => {
+      localStorage.setItem(
+        `cartItems_${username}`,
+        JSON.stringify(this.state.cartItems),
+      );
+    });
   };
+
+  clearCart = () => {
+    const username = localStorage.getItem("username");
+
+    localStorage.removeItem(`cartItems_${username}`);
+
+    this.setState({ cartItems: [] });
+  };
+
   render() {
     const { cartItems } = this.state;
+
     return (
       <BrowserRouter>
         <Routes>
@@ -88,8 +89,8 @@ class App extends Component {
           />
 
           <Route path="/login" element={<Login />} />
-
           <Route path="/signup" element={<Signup />} />
+
           <Route
             path="/profile"
             element={
@@ -98,6 +99,7 @@ class App extends Component {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/profile/:useremail"
             element={
@@ -106,7 +108,9 @@ class App extends Component {
               </ProtectedRoute>
             }
           />
+
           <Route path="*" element={<NotFound />} />
+
           <Route
             path="addrestaurants"
             element={
@@ -115,6 +119,7 @@ class App extends Component {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/menu-items/:restid"
             element={
@@ -123,6 +128,7 @@ class App extends Component {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/view-menu/:restid"
             element={
@@ -131,14 +137,16 @@ class App extends Component {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/cart"
             element={
               <ProtectedRoute>
-                <Cart cartItems={cartItems} />
+                <Cart cartItems={cartItems} clearCart={this.clearCart} />
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/orders"
             element={

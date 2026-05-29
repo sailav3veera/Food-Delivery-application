@@ -10,8 +10,8 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #555555;
-  height: 100vh;
+  min-height: 100vh;
 }
-.headingorders{
-    color: wheat;
+.headingorders {
+  color: wheat;
 }
