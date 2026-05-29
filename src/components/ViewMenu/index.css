@@ -1,0 +1,32 @@
+.menuitemscontainer {
+  background-color: #555555;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.menucontent {
+  padding: 20px;
+}
+
+.divmenulist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.addbutton {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.plusicon {
+  font-size: 40px;
+}
+.menuitemheading {
+  color: wheat;
+}

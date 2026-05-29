@@ -1,0 +1,17 @@
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.ordercontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #555555;
+  height: 100vh;
+}
+.headingorders{
+    color: wheat;
+}

@@ -1,0 +1,15 @@
+.homepagecontainer {
+  background-color: #555555;
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+.plusicon {
+  color: #555555;
+  font-size: 30px;
+}
+.resturantname {
+  color: wheat;
+}
+.headingrest {
+  color: whitesmoke;
+}

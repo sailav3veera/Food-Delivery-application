@@ -1,0 +1,29 @@
+.addrescontainer {
+  background-color: #555555;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.formcontainer {
+  background-color: white;
+  height: 70%;
+  width: 40%;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.addresdiv {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+.addresdiv label {
+  width: 50%;
+}
+.successfulmessage {
+  color: green;
+}

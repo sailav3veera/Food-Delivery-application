@@ -1,0 +1,30 @@
+.wholecart {
+  background-color: #555555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  height: 100vh;
+}
+.cartheading {
+  color: wheat;
+}
+.totalprice {
+  color: wheat;
+  align-self: flex-end;
+  margin-right: 100px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.totalpricepara {
+  color: white;
+  font-size: 30px;
+}
+.placeorderbutton {
+  background-color: wheat;
+  color: black;
+  border: none;
+  padding: 20px;
+  border-radius: 20px;
+}

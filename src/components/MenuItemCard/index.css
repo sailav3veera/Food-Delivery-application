@@ -1,0 +1,35 @@
+.itemcontainer {
+  background-color: white;
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 300px;
+  box-shadow: 0px 0px 15px gold;
+  border-radius: 20px;
+}
+.imageitem {
+  width: 100%;
+  border-radius: 20px;
+  height: 30%;
+}
+.addcartbutton {
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.addcartbutton:hover {
+  background-color: gold;
+  color: black;
+}

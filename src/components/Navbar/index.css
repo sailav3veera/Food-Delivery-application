@@ -1,0 +1,45 @@
+.navbarlogo {
+  width: 50px;
+}
+.navbardesign {
+  background-color: gold;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 2);
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logoandtitle {
+  display: flex;
+  width: 20%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.titleheading {
+  color: white;
+}
+.buttonsnavbar {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-right: 10px;
+}
+.profilebutton {
+  background: none;
+  border: none;
+}
+.profilecion {
+  font-size: 40px;
+  color: white;
+}
+.logoutbutton {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+}
+.logoutbutton:hover {
+  background-color: orange;
+}

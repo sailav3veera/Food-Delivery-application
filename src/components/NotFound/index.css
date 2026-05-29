@@ -1,0 +1,18 @@
+.notfoundimage {
+  width: 60%;
+  height: 60%;
+}
+.notfoundcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #555555;
+  height: 100vh;
+}
+.notfoundbutton {
+  background-color: gold;
+  padding: 20px;
+  border-radius: 20px;
+  border: none;
+}

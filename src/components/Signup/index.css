@@ -1,0 +1,23 @@
+.formcardsignup {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 20%;
+  color: yellow;
+  border-radius: 20px;
+  padding: 20px;
+  height: 60%;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+.input-container label {
+  width: 160px;
+  margin: 10px;
+}

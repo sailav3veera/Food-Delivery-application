@@ -1,0 +1,41 @@
+.profiledetailscontainer {
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profilecontaineruser {
+  background-color: #555555;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hrlinep {
+  border: 2px solid #555555;
+  width: 90%;
+}
+.detailscontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 50%;
+}
+.buttonprofile {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  width: 100px;
+}
+.buttonprofile:hover {
+  background-color: gold;
+  color: black;
+}
